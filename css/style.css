@@ -18,6 +18,9 @@
 }
 .sideactive{
     background: #07617D;
+    height: 100%;
+}
+.side{
 }
 .sidebar{
     color: #000000;
@@ -28,9 +31,9 @@
     color: #034053;
 }
 .sidebar.active{
-    background: #07617D;
     color: #ffffff;
     text-decoration: none;
+    
 }
 .table{
     font-size: 12px;
@@ -40,6 +43,16 @@
     background: #F9A828;
     color: #ffffff;
 }
-.row {
-    margin: 1px;
+.hasilnya{
+    background-color: #fff7e7;
+    text-align: center;
+    border: 2px solid #F9A828;
+}
+p{
+    font-size: 14px;
+}
+@media (min-width: 768px) {
+    .garis{
+        display: none;
+    }
 }
