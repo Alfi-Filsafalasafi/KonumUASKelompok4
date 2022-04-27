@@ -1,0 +1,42 @@
+.btn-utama{
+    background-color: #07617D;
+    color: white;
+}
+.btn-utama:hover{
+    background-color: #034053;
+    color: white;
+}
+.utama{
+    color:#07617D;
+}
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.background{
+    background-image: url('http://localhost/KOnumUAS/public/img/Vect.png');
+    height: 690px;
+}
+.sideactive{
+    background: #07617D;
+}
+.sidebar{
+    color: #000000;
+    text-decoration: none;
+    width: 100%;
+}
+.sidebar:hover{
+    color: #034053;
+}
+.sidebar.active{
+    background: #07617D;
+    color: #ffffff;
+    text-decoration: none;
+}
+.table{
+    font-size: 12px;
+}
+.hasil{
+    width: 100%;
+    background: #F9A828;
+    color: #ffffff;
+}
