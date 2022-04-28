@@ -13,8 +13,8 @@
     font-family: 'Poppins', sans-serif;
 }
 .background{
-    background-image: url('http://localhost/KOnumUAS/public/img/Vect.png');
-    height: 690px;
+    background-image: url('../img/Vect.png');
+    height: 680px;
 }
 .sideactive{
     background: #07617D;
@@ -53,4 +53,18 @@ p{
     .garis{
         display: none;
     }
+}
+
+.btn-baca{
+    background: #F9A828;
+    color: #ffffff;
+}
+.btn-baca:hover{
+    background: #cf8a19;
+    color: #ffffff;
+}
+
+.footer{
+    background: #07617D;
+    color: white;
 }
