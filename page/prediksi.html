@@ -88,14 +88,14 @@
        var elemen1 = (((x-x1)*(x-x2))/((x0-x1)*(x0-x2)))*y0;
        var elemen2 = (((x-x0)*(x-x2))/((x1-x0)*(x1-x2)))*y1;
        var elemen3 = (((x-x0)*(x-x1))/((x2-x0)*(x2-x1)))*y2;
-       var hasil = elemen1+elemen2+elemen3;
+       var hasil = Math.floor( elemen1+elemen2+elemen3);
        var selisih = hasil - y2;
        var persentase = selisih/y2;
        var peningkatan = persentase*100;
        const p = document.getElementById("hasil")
        p.innerHTML = formatNumber(hasil);
        const kesimpulan = document.getElementById("kesimpulan")
-       kesimpulan.innerHTML = "Jadi, jumlah penduduk pada tahun berikutnya diperkirakan meningkat sebesar <b>"+peningkatan+"</b>% dengan total menjadi <b>"+formatNumber(hasil)+"</b> orang"
+       kesimpulan.innerHTML = "Jadi, jumlah penduduk pada tahun berikutnya diperkirakan meningkat sebesar <b>"+peningkatan.toFixed(2)+"</b>% dengan total menjadi <b>"+formatNumber(hasil)+"</b> orang"
       }
       </script>
   </body>
