@@ -44,23 +44,27 @@
                             <th scope="col">Nama Kota / Kabupaten</th>
                             <th scope="col">Luas Wilayah</th>
                             <th scope="col">Jumlah Penduduk</th>
+                            <th scope="col">Indeks</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td>Surabaya</td>
-                            <td>191.101.099 KM</td>
-                            <td>1.908.765 Orang</td>
+                            <td>Kab. Malang</td>
+                            <td>35.310 KM</td>
+                            <td>2.619.975 Orang</td>
+                            <td>74,19</td>
                           </tr>
                           <tr>
-                            <td>Surabaya</td>
-                            <td>191.101.099 KM</td>
-                            <td>1.908.765 Orang</td>
+                            <td>Kota Pontianak</td>
+                            <td>11830 KM</td>
+                            <td>672.440 Orang</td>
+                            <td>56,84</td>
                           </tr>
                           <tr>
-                            <td>Surabaya</td>
-                            <td>191.101.099 KM</td>
-                            <td>1.908.765 Orang</td>
+                            <td>Kota Semarang</td>
+                            <td>37.380 KM</td>
+                            <td>1.656.564 Orang</td>
+                            <td>44,31</td>
                           </tr>
                         </tbody>
                     </table>
@@ -70,7 +74,7 @@
                         </div>
                         <div class="mb-3 row">
                           <div class="col-10">
-                            <input type="text" class="form-control"  name="luas" id="staticEmail" placeholder="Luas Wilayah">
+                            <input type="number" class="form-control"  name="luas" id="staticEmail" placeholder="Luas Wilayah">
                           </div>
                           <label for="staticEmail" class="col-2 col-form-label">KM</label>
                         </div>
@@ -98,13 +102,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script type="text/javascript">
       function hitung(){
-       var angka2=parseFloat(document.perkiraan.luas.value);
-       var hasil= angka2*3;
+       var x=parseFloat(document.perkiraan.luas.value);
+       var x0 = 35310
+       var y0 = 2619975
+       var x1 = 11830
+       var y1 = 672440
+       var x2 = 37380
+       var y2 = 1656564
+       var elemen1 = (((x-x1)*(x-x2))/((x0-x1)*(x0-x2)))*y0;
+       var elemen2 = (((x-x0)*(x-x2)) /((x1-x0)*(x1-x2)))*y1;
+       var elemen3 = (((x-x0)*(x-x1)) /((x2-x0)*(x2-x1)))*y2;
        var namaKota= document.perkiraan.nama.value;
+       var hasil = elemen1+elemen2+elemen3;
        const p = document.getElementById("hasil")
        p.innerHTML = hasil;
        const kesimpulan = document.getElementById("kesimpulan")
-       kesimpulan.innerHTML = "Jadi, jumlah penduduk ideal pada <b>"+namaKota+"</b> yang memiliki luas wilayah sebesar 191.101.099 KM adalah <b>"+hasil+"</b> orang"
+       kesimpulan.innerHTML = "Jadi, jumlah penduduk ideal pada <b>"+namaKota+"</b> yang memiliki luas wilayah sebesar "+x+" KM adalah <b>"+hasil+"</b> orang"
       }
       </script>
   </body>

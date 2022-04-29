@@ -78,12 +78,19 @@
             return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
         }
       function hitung(){
-       var pertama=parseFloat(document.perkiraan.pertama.value);
-       var kedua=parseFloat(document.perkiraan.kedua.value);
-       var ketiga=parseFloat(document.perkiraan.ketiga.value);
-       var hasil= pertama+ketiga+kedua;
-       var selisih = hasil - ketiga;
-       var persentase = selisih/ketiga;
+       var y0=parseFloat(document.perkiraan.pertama.value);
+       var y1=parseFloat(document.perkiraan.kedua.value);
+       var y2=parseFloat(document.perkiraan.ketiga.value);
+       var x0 = 1
+       var x1 = 2
+       var x2 = 3
+       var x=4
+       var elemen1 = (((x-x1)*(x-x2))/((x0-x1)*(x0-x2)))*y0;
+       var elemen2 = (((x-x0)*(x-x2))/((x1-x0)*(x1-x2)))*y1;
+       var elemen3 = (((x-x0)*(x-x1))/((x2-x0)*(x2-x1)))*y2;
+       var hasil = elemen1+elemen2+elemen3;
+       var selisih = hasil - y2;
+       var persentase = selisih/y2;
        var peningkatan = persentase*100;
        const p = document.getElementById("hasil")
        p.innerHTML = formatNumber(hasil);
