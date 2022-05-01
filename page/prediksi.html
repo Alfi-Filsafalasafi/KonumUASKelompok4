@@ -13,6 +13,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&family=Quicksand:wght@300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
     </style>
+    <script type="text/javascript" src="../js/Chart.js"></script>
     <title>Prediksi</title>
   </head>
   <body>
@@ -65,6 +66,9 @@
                       </div>
                     </div>
                     <p id="kesimpulan"></p>
+                    <div mt="2" class="hasilnya">
+                      <canvas id="myChart"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
@@ -96,6 +100,38 @@
        p.innerHTML = formatNumber(hasil);
        const kesimpulan = document.getElementById("kesimpulan")
        kesimpulan.innerHTML = "Jadi, jumlah penduduk pada tahun berikutnya diperkirakan meningkat sebesar <b>"+peningkatan.toFixed(2)+"</b>% dengan total menjadi <b>"+formatNumber(hasil)+"</b> orang"
+      
+        var ctx = document.getElementById("myChart").getContext('2d');
+        var pertama = y0;
+        var kedua = y1;
+        var ketiga = y2;
+        var keempat = hasil;
+        var myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ["Tahun Pertama", "Tahun Kedua", "Tahun Ketiga", "Tahun Keempat"],
+            datasets: [{
+              label: '# of Votes',
+              data: [pertama, kedua, ketiga, keempat],
+              backgroundColor: [
+              'rgba(249,168,40, 0.2)'
+              ],
+              borderColor: [
+              'rgba(249,168,40,1)'
+              ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero:true
+                }
+              }]
+            }
+          }
+        });
       }
       </script>
   </body>
