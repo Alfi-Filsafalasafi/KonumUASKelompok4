@@ -76,7 +76,8 @@
     
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script type="text/javascript">
         function formatNumber(num) {
             return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
@@ -99,7 +100,8 @@
        const p = document.getElementById("hasil")
        p.innerHTML = formatNumber(hasil);
        const kesimpulan = document.getElementById("kesimpulan")
-       kesimpulan.innerHTML = "Jadi, jumlah penduduk pada tahun berikutnya diperkirakan meningkat sebesar <b>"+peningkatan.toFixed(2)+"</b>% dengan total menjadi <b>"+formatNumber(hasil)+"</b> orang"
+       kesimpulan.innerHTML = "Jadi, jumlah penduduk pada tahun berikutnya diperkirakan meningkat sebesar <b>"+peningkatan.toFixed(2)+
+        "</b>% dengan total menjadi <b>"+formatNumber(hasil)+"</b> orang"
       
         var ctx = document.getElementById("myChart").getContext('2d');
         var pertama = y0;
@@ -134,5 +136,6 @@
         });
       }
       </script>
+      
   </body>
 </html>
