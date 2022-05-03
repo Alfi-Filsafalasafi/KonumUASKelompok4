@@ -43,13 +43,13 @@
                     <form action="" method="" name="perkiraan">
                         <div class="mb-3 row">
                           <div class="col-lg-4 my-1">
-                            <input type="text" class="form-control"  name="pertama" id="inputAngka1"  placeholder="Jumlah Pertama">
+                            <input type="number" class="form-control"  name="pertama" id="inputAngka1"  placeholder="Jumlah Pertama">
                           </div>
                           <div class="col-lg-4 my-1">
-                            <input type="text" class="form-control"  name="kedua" id="inputAngka2" placeholder="Jumlah Kedua">
+                            <input type="number" class="form-control"  name="kedua" id="inputAngka2" placeholder="Jumlah Kedua">
                           </div>
                           <div class="col-lg-4 my-1">
-                            <input type="text" class="form-control"  name="ketiga" id="inputAngka3" placeholder="Jumlah Ketiga">
+                            <input type="number" class="form-control"  name="ketiga" id="inputAngka3" placeholder="Jumlah Ketiga">
                           </div>
                         </div>
                         <input type="button" class="btn hasil py-3" value="hasil" onclick="hitung()">
@@ -93,7 +93,7 @@
        var elemen1 = (((x-x1)*(x-x2))/((x0-x1)*(x0-x2)))*y0;
        var elemen2 = (((x-x0)*(x-x2))/((x1-x0)*(x1-x2)))*y1;
        var elemen3 = (((x-x0)*(x-x1))/((x2-x0)*(x2-x1)))*y2;
-       var hasil = Math.floor( elemen1+elemen2+elemen3);
+       var hasil = Math.floor(elemen1+elemen2+elemen3);
        var selisih = hasil - y2;
        var persentase = selisih/y2;
        var peningkatan = persentase*100;
